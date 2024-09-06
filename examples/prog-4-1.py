@@ -10,7 +10,7 @@ pyglet.gl.glClearColor(0.3, 0.3, 0.5, 1.0)
 batch = pyglet.graphics.Batch()
 
 # 図形オブジェクトの生成
-image = pyglet.image.load('moon.png')
+image = pyglet.image.load('../data/moon.png')
 sprite = pyglet.sprite.Sprite(img=image, x=150, y=130,  batch=batch)
 
 label = text.Label('Pygletの２次元図形', font_name='Arial', font_size=36, color=(10,200,250,255), \

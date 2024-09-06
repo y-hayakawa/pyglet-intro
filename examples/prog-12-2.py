@@ -215,7 +215,7 @@ def update(dt):
 
 # HDF5データ読み込み
 
-filename = "starling-20141026s2f8.h5"
+filename = "../data/starling-20141026s2f8.h5"
 with h5py.File(filename, 'r') as h5f:
     data = {}
     for key in h5f.keys():

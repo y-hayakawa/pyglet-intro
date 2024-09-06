@@ -168,7 +168,7 @@ def load_texed_model_from_obj_file(filename, shader, batch, has_normal=False):
 setup()
 
 # マテリアルデータの読み込み
-model_jupiter = load_texed_model_from_obj_file(filename="jupiter.obj", shader=shader, batch=batch, has_normal=True)
+model_jupiter = load_texed_model_from_obj_file(filename="../data/jupiter.obj", shader=shader, batch=batch, has_normal=True)
 
 # 視点を設定
 window.view = Mat4.look_at(position=Vec3(0,0,3), target=Vec3(0,0,0), up=Vec3(0,1,0))

@@ -65,10 +65,10 @@ vert_shader = Shader(vertex_source, 'vertex')
 frag_shader = Shader(fragment_source, 'fragment')
 shader = ShaderProgram(vert_shader, frag_shader)
 
-holstein = pyglet.image.load('holstein.png')
+holstein = pyglet.image.load('../data/holstein.png')
 texture2 = holstein.get_texture()
 
-brick_wall = pyglet.image.load('brick-wall.png')
+brick_wall = pyglet.image.load('../data/brick-wall.png')
 texture1 = brick_wall.get_texture()
 
 time=0

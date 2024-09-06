@@ -66,7 +66,7 @@ vert_shader = Shader(vertex_source, 'vertex')
 frag_shader = Shader(fragment_source, 'fragment')
 shader = ShaderProgram(vert_shader, frag_shader)
 
-brick_wall = pyglet.image.load('brick-wall.png')
+brick_wall = pyglet.image.load('../data/brick-wall.png')
 texture = brick_wall.get_texture()
 
 time=0

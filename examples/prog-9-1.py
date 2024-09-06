@@ -179,7 +179,7 @@ def load_model_from_obj_file(filename, shader, batch, has_normal=False):
 setup()
 
 # 多面体データの読み込み
-model = load_model_from_obj_file(filename="dodecahedron.obj", shader=shader, batch=batch, has_normal=True)
+model = load_model_from_obj_file(filename="../data/dodecahedron.obj", shader=shader, batch=batch, has_normal=True)
 
 # 視点を設定
 window.view = Mat4.look_at(position=Vec3(0,0,5), target=Vec3(0,0,0), up=Vec3(0,1,0))

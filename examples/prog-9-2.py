@@ -37,7 +37,7 @@ def setup():
 setup()
 
 # OBJファイルの読み込み
-model_jupiter = pyglet.resource.model("jupiter.obj", batch=batch)
+model_jupiter = pyglet.model.load("../data/jupiter.obj", batch=batch)
 
 # 視点を設定
 window.view = Mat4.look_at(position=Vec3(0,0,3), target=Vec3(0,0,0), up=Vec3(0,1,0))
