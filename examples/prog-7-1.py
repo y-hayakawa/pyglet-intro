@@ -91,7 +91,7 @@ def setup():
     glClearColor(0.3, 0.3, 0.5, 1.0)
     glEnable(GL_DEPTH_TEST)
     glEnable(GL_CULL_FACE)
-    glActiveTexture(gl.GL_TEXTURE0)
+    glActiveTexture(GL_TEXTURE0)
     glBindTexture(texture.target, texture.id)
     on_resize(*window.size)
 
