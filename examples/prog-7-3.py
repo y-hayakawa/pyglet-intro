@@ -80,11 +80,11 @@ class TwoTexturedMaterialGroup(pyglet.model.TexturedMaterialGroup):
 
     def set_state(self) -> None:
         self.program['texture_0'] = 0
-        gl.glActiveTexture(gl.GL_TEXTURE0)
-        gl.glBindTexture(self.texture0.target, self.texture0.id)
+        glActiveTexture(GL_TEXTURE0)
+        glBindTexture(self.texture0.target, self.texture0.id)
         self.program['texture_1'] = 1
-        gl.glActiveTexture(gl.GL_TEXTURE1)
-        gl.glBindTexture(self.texture1.target, self.texture1.id)        
+        glActiveTexture(GL_TEXTURE1)
+        glBindTexture(self.texture1.target, self.texture1.id)        
         self.program.use()
         self.program['model'] = self.matrix
         
