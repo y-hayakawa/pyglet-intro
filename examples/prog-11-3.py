@@ -165,7 +165,7 @@ def load_npy_and_gen_model(npy_file, iso_level, shader, batch):
 
     return pyglet.model.Model(vertex_lists=[vertex_list], groups=[group], batch=batch)
 
-npy_file = 'cahn–hilliard-model.npy'
+npy_file = '../data/cahn–hilliard-model.npy'
 iso_model = load_npy_and_gen_model(npy_file, 0.5, shader1, batch1)
 
 # draw a cube

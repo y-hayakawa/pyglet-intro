@@ -124,22 +124,23 @@ def load_texed_model_from_obj_file(filename, shader, batch, has_normal=False):
     vertex_lists=[ ]
     groups=[ ]
     for mesh in mesh_list:
-        material = mesh.material
+        material = mesh.primitives[0].material
         img = pyglet.image.load(material.texture_name)
         texture = img.get_texture()
-        count = len(mesh.vertices) // 3
+        vertices = mesh.primitives[0].attributes[0].array        
+        count = len(vertices) // 3
         group = pyglet.model.TexturedMaterialGroup(material=material, program=shader, texture=texture, order=0)
         normals=[ ]        
         if has_normal:
-            normals[:] = mesh.normals
+            normals[:] = mesh.primitives[0].attributes[1].array
         else:
             for k in range(0,count,3):
-                dx0 = mesh.vertices[(k+1)*3+0] - mesh.vertices[k*3+0]
-                dy0 = mesh.vertices[(k+1)*3+1] - mesh.vertices[k*3+1]
-                dz0 = mesh.vertices[(k+1)*3+2] - mesh.vertices[k*3+2]
-                dx1 = mesh.vertices[(k+2)*3+0] - mesh.vertices[k*3+0]
-                dy1 = mesh.vertices[(k+2)*3+1] - mesh.vertices[k*3+1]
-                dz1 = mesh.vertices[(k+2)*3+2] - mesh.vertices[k*3+2]
+                dx0 = vertices[(k+1)*3+0] - vertices[k*3+0]
+                dy0 = vertices[(k+1)*3+1] - vertices[k*3+1]
+                dz0 = vertices[(k+1)*3+2] - vertices[k*3+2]
+                dx1 = vertices[(k+2)*3+0] - vertices[k*3+0]
+                dy1 = vertices[(k+2)*3+1] - vertices[k*3+1]
+                dz1 = vertices[(k+2)*3+2] - vertices[k*3+2]
                 nx = dy0*dz1 - dz0*dy1
                 ny = dz0*dx1 - dx0*dz1
                 nz = dx0*dy1 - dy0*dx1
@@ -149,11 +150,13 @@ def load_texed_model_from_obj_file(filename, shader, batch, has_normal=False):
                     ny /= n
                     nz /= n
                 normals.extend([nx,ny,nz,nx,ny,nz,nx,ny,nz])
-                
+
+        tex_coords = mesh.primitives[0].attributes[2].array
+        
         vertex_list = shader.vertex_list(count, GL_TRIANGLES, batch=batch, group=group, \
-                                         position=('f', mesh.vertices), \
+                                         position=('f', vertices), \
                                          normals = ('f', normals), \
-                                         tex_coords = ('f', mesh.tex_coords) )
+                                         tex_coords = ('f', tex_coords) )
         vertex_list.diffuse_colors[:] = material.diffuse * count
         vertex_list.ambient_colors[:] = material.ambient * count
         vertex_list.specular_colors[:] = material.specular * count

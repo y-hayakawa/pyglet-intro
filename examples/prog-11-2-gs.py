@@ -202,7 +202,7 @@ geom_shader1 = Shader(geometory_source1, 'geometry')
 frag_shader1 = Shader(fragment_source1, 'fragment')
 shader1 = ShaderProgram(vert_shader1, geom_shader1, frag_shader1)
 
-npy_file = 'cahn–hilliard-model.npy'
+npy_file = '../data/cahn–hilliard-model.npy'
 texture = load_npy_as_3d_texture(npy_file)
 
 glClearColor(0.3, 0.3, 0.5, 1.0)

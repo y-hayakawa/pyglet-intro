@@ -36,8 +36,9 @@ def setup():
 # OpenGLの初期設定
 setup()
 
-# OBJファイルの読み込み
-model_jupiter = pyglet.model.load("../data/jupiter.obj", batch=batch)
+# OBJファイルの読み込み                                                                                                                                            
+jupiter_scene = pyglet.resource.scene("../data/jupiter.obj")
+model_jupiter = jupiter_scene.create_models(batch=batch)[0]
 
 # 視点を設定
 window.view = Mat4.look_at(position=Vec3(0,0,3), target=Vec3(0,0,0), up=Vec3(0,1,0))

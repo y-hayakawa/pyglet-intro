@@ -173,7 +173,7 @@ def tetrahedron(shader, texture0, texture1, batch):
     emission = [0.0, 0.0, 0.0, 1.0]
     shininess = 50
 
-    material = pyglet.model.Material("custom", diffuse, ambient, specular, emission, shininess)
+    material = pyglet.model.codecs.base.SimpleMaterial("custom", diffuse, ambient, specular, emission, shininess)
     group = TwoTexturedMaterialGroup(material=material, program=shader, \
                                      texture0=texture0, texture1=texture1)
         
