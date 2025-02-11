@@ -37,7 +37,8 @@ def setup():
 setup()
 
 # OBJファイルの読み込み
-# "jupiter.obj", "jupiter.mtl", "2k_jupiter.jpg"をカレントディレクトリに置いておくこと
+pyglet.resource.path = ['../data','.']
+pyglet.resource.reindex() 
 jupiter_scene = pyglet.resource.scene("jupiter.obj")
 model_jupiter = jupiter_scene.create_models(batch=batch)[0]
 
