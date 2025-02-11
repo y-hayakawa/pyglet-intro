@@ -151,7 +151,7 @@ def load_npy_and_gen_model(npy_file, iso_level, shader, batch):
     emission = (0,0,0,1)
     shininess = 20
 
-    material = pyglet.model.Material("custom", diffuse, ambient, specular, emission, shininess)
+    material = pyglet.model.codecs.base.SimpleMaterial("custom", diffuse, ambient, specular, emission, shininess)
     group = MyMaterialGroup(material=material, program=shader)
         
     vertex_list = shader.vertex_list_indexed(len(vertices)//3, GL_TRIANGLES, indices, batch=batch, group=group)
