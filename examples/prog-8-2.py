@@ -151,7 +151,7 @@ def tetrahedron(shader, diffuse, ambient, specular, emission, shininess, batch):
     vertices = np.concatenate(vertices).tolist()
     normals = np.concatenate(normals).tolist()
 
-    material = pyglet.model.Material("custom", diffuse, ambient, specular, emission, shininess)
+    material = pyglet.model.codecs.base.SimpleMaterial("custom", diffuse, ambient, specular, emission, shininess)
     group = MyMaterialGroup(material=material, program=shader)
         
     vertex_list = shader.vertex_list(len(vertices)//3, GL_TRIANGLES, batch=batch, group=group)
