@@ -50,9 +50,9 @@ rot_angle = 0.0
 
 import os
 
-frame_cnt=0 ;
+frame_cnt=0
 def save_screen():
-    global frame_cnt ;
+    global frame_cnt
     if not os.path.isdir("images"):
         os.mkdir("images")
     filename = "images/{:#05}.png".format(frame_cnt)
