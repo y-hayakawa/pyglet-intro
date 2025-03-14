@@ -104,7 +104,7 @@ fragment_source2 = '''#version 330 core
 
 class MyMaterialGroup(pyglet.model.BaseMaterialGroup):
     def __init__(self, material:pyglet.model.Material, program: pyglet.graphics.shader.ShaderProgram, \
-             order:int=0, parent: pyglet.graphics.Group | None = None):
+                 order:int=0, parent:pyglet.graphics.Group=None):
         super().__init__(material, program, order, parent)
     
     def set_state(self) -> None:
