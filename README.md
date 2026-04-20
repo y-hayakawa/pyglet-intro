@@ -1,7 +1,7 @@
 # Pygletによる「手抜き」OpenGL入門
 
-ここは、[Pythonで学ぶコンピュテーショナル・シンキングとデータ科学](https://wagtail.cds.tohoku.ac.jp/coda/python/)のサブトピックとして開設している
-[Pygletによる「手抜き」OpenGL入門](https://wagtail.cds.tohoku.ac.jp/coda/python/pyglet/index.html)
+ここは、[Pythonで学ぶコンピュテーショナル・シンキングとデータ科学](https://daifukujs.org/coda/python/)のサブトピックとして開設している
+[Pygletによる「手抜き」OpenGL入門](https://daifukujs.org/coda/python/pyglet/index.html)
 のサンプルコードやテクスチャーデータ等の置き場として設けています。
 
 動作を確認しているPygletのバージョンは 2.1.x になります。それ以外の古いバージョンでは動作しない場合があるかもしれませんのでご注意ください。
@@ -16,5 +16,5 @@ prog-9-3.py
 （ [ダウンロード](https://www.solarsystemscope.com/textures/download/2k_jupiter.jpg) ）。
 
 prog-10-1.py  
-[ウェブサイトの説明](https://wagtail.cds.tohoku.ac.jp/coda/python/pyglet/pyglet-part5.html#sec10-1) に従って、恒星の座標データ（hygdata_v41.csv のような名称）をダウンロードし、コードと同じフォルダーに保存してください。
+[ウェブサイトの説明](https://daifukujs.org/coda/python/pyglet/pyglet-part5.html#sec10-1) に従って、恒星の座標データ（hygdata_v41.csv のような名称）をダウンロードし、コードと同じフォルダーに保存してください。
 コードの中のファイル名はダウンロードしたデータファイル名に一致するよう、適宜修正ください。
